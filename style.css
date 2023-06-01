@@ -1,0 +1,858 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+    --white-color:#fff;
+    --ff-lato:'Lato', sans-serif;
+    --bright-blue:#006dfe;
+    --blue:#1b7dff;
+    --dark--blue:#102746;
+    --dark--grey--blue:#0e1d28;
+    --black:#000;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1rem;
+    font-family: 'Lato', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul, ol {
+    list-style: none;
+}
+
+/******************* common style ***************** */
+.font--style{
+    font-family: var(--ff-lato);
+    color: var(--white-color);
+}
+.font--strong{
+    font-weight: 500;
+}
+.text--lg{
+    line-height: 1.33;
+    color: var(--dark--blue);
+}
+.text--md{
+    line-height: 1.33;
+}
+.text--sm{
+    line-height: 1.5;
+}
+.link--primary{
+    color: var(--blue);
+}
+.cta-primary,
+.cta-secondary{
+    font-family: var(--ff-lato);
+    color: var(--white-color);
+    text-align: center;
+    display: inline-block;
+}
+.cta-primary{
+    font-size: 24px;
+    font-weight: 500;
+    background-color:var(--blue);
+    padding: 15px 30px;
+}
+.cta-secondary{
+    font-size: 16px;
+    background-color: var(--bright-blue);
+    padding:12px 20px;
+} 
+.cta-primary:hover{
+    color:var(--dark--blue);
+}
+.cta-secondary:hover{
+    color:var(--dark--blue);
+}
+.clear--fix{
+    content: "";
+    clear: both;
+    display: table;
+ }
+
+/******************* header ***************** */
+header{
+    position:fixed;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+.navbar{
+    width: 100%;
+    margin: auto;
+    padding: 56px 90px 0 90px;
+}
+
+.nav--brand{
+    float: left;
+    line-height: 0;
+    width:82px;
+    height:auto;
+}
+.navbar--nav{
+    float: right;
+    font-size: 0;
+    margin: 4px 0 3px 0;
+}
+.navbar--nav li{
+    display: inline-block;
+    margin-left: 82px; 
+}
+.navbar--nav a:hover{
+    color:var(--dark--blue);
+}
+.mobile--nav a:hover{
+    color: var(--bright-blue);
+}
+.mobile--nav li{
+    list-style: none;
+    padding: 20px;
+}
+.mobile--nav {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 100px;
+    left: -100%;
+    padding: 15px;
+    background-color: rgba(130, 130, 130, 0.691);
+    
+}
+  .menu-toggle:checked ~ .mobile--nav {
+    transition: left 0.5s ease-in-out;
+    left: 0;
+}
+
+#menu-toggle{
+    display: none;
+}
+.menu{
+    float: right;
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.menu--icon{
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color:var(--white-color);
+    margin: 6px 0;
+}
+
+
+/* banner */
+.banner{
+    width:100%;
+    height: 962px;
+    background: url('./image/hero.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero{
+    width: 100%;
+    max-width: 992px;
+    height: 962px;
+    margin: 0 auto;
+    padding-top: 263px;
+}
+.hero h1{
+    font-size: 50px;
+    margin-bottom: 22px;
+}
+.hero p{
+    margin-bottom: 54px;
+}
+.oval{
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--white-color);
+    display: inline-block;
+}
+.search--field{
+    width: 100%;
+    max-width: 301px;
+    border-bottom: 2px solid #bfc0c5; 
+    padding-bottom: 22px;
+    vertical-align: top;
+    float: left;
+}
+.search--field input{
+    width: 250px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding-left: 30px;
+    line-height: 24px;
+}
+.search--field input::placeholder {
+    color: var(--white-color);
+    font-family: var(--ff-lato);
+    font-size: 18px;
+    font-weight: 500;
+}
+/* container */
+.container{
+    max-width:1262px;
+    width: 100%;
+    position: relative;
+    top: -223px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+    box-shadow: 0 2px 20px 0 rgba(21, 24, 36, 0.16);
+    padding: 93px 63px 112px 99px;
+}
+.container a{
+    vertical-align: middle;
+}
+.card{
+    width: calc((100% - 148px) / 3); 
+    float: left;
+    text-align: left; 
+}
+.title--cards .card:last-child {
+  margin-right: 0;
+}
+.card img{
+    width:auto;
+    height: 66px;
+    margin-bottom: 37px;
+} 
+.card h5{
+    margin-bottom: 26px;
+    color: var(--black);
+}
+.card p{
+    color: var(--black);
+    margin-bottom: 39px;
+}
+.east{
+    padding-left: 26px;
+    vertical-align: baseline;
+}
+.container .card a:hover{
+    color: var(--dark--blue);
+}
+/* places */
+.places{
+    max-width: 1262px;
+    width: 100%;
+    margin:0 auto;
+    position: relative;
+    top: -90px;
+}
+.places a:hover{
+        color: var(--dark--blue);
+    }
+.places a{
+    padding: 15px;
+}
+.places h3{
+    position: relative;
+    padding-bottom: 7px;
+}
+.places h3::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border: solid 2px var(--bright-blue);
+}
+.tourist--spot__one div,
+.tourist--spot__two div{
+  float: left;
+  margin-right: 10px;
+
+}
+.tourist--spot__one div:last-child,
+.tourist--spot__two div:last-child
+{
+    margin-right: 0;
+}
+
+.famous--place img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+  
+.stick{
+    position:relative;
+    left:26px;
+    top: -87px;
+}
+ 
+ 
+ 
+/* meditation*/
+.meditation{
+    max-width: 1262px;
+    width: 100%;
+    margin:0 auto;
+}
+.meditation :hover{
+    color: var(--dark--blue);
+}
+.destinations{
+    width: 100%;
+    position: relative;
+}
+
+.second--row{
+    margin-top: 77px;
+}
+
+.view--details{
+    width:calc((100% - 10px) / 2);
+    float: left;
+    height: 354px;
+}
+.view--details img,
+.neighborhood img{
+    width: 100%;
+    height: 100%;
+}
+.neighborhood{
+    width:calc((100% - 10px) / 2);
+   display: inline-block;
+    height: 354px;
+
+}
+.arashiyam{
+    float: right;
+}
+.destinations .view--details:last-child,
+.destinations .neighborhood:first-child
+{
+    margin-right: 0;
+}
+ 
+.view--details p,
+.neighborhood p{
+    line-height: 24px;
+    color: var(--black);
+    margin-top: 45px;
+}
+.link--secondary{
+    display: block;
+    margin-top: 58px;
+}
+/* popular places */
+.popular--city{
+    max-width: 1262px;
+    width: 100%;
+    margin:0 auto;
+}
+.popular--city h3{
+    position: relative;
+    padding-bottom: 7px;
+}
+.popular--city  h3::after{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 22%;
+    border: solid 2px var(--bright-blue);
+}
+.city--container{
+    width: 100%;
+}
+.place--item{
+    width:calc((100% - 116px) / 3);
+    float: left;
+    position: relative;
+}
+.city--container .place--item:nth-child(3),
+.city--container .place--item:nth-child(6){
+    margin-right: 0;
+}
+.place--item img{
+    width: 100%;
+    height: 377px;
+    object-fit: cover;
+}
+ 
+.location{
+    width: 100%;
+    height: 55px;
+    background-color: rgba(21, 24, 36, 0.6);
+    padding: 15px;
+    position: absolute;
+    left: 0;
+    top: 322px; 
+}
+ .location li{
+    display: inline-block;
+    vertical-align:top;
+    margin-left: 4px;
+}
+.name{
+    float: left;
+ }
+ .location ul{
+    float: right;
+}
+.place--item p{
+    margin-top: 35px;
+    color: var(--black);
+}
+.link-tertiary{
+    margin-top: 31px;
+}
+ 
+/***************** video ********************/
+.video{
+    width:100%;
+    height: 600px;
+    background: url('./image/street.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin-top: 144px;
+}
+.circle{
+    width: 112px;
+    height:112px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+}
+.triangle{
+        width: 0;
+        height: 0; border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left: 30px solid rgb(16, 20, 16);
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-35%,-50%);
+ 
+} 
+ 
+/**************** footer ***************** */
+.footer--container{
+    padding: 118px 167px 118px 194px;
+    background-color: var(--dark--grey--blue);
+}
+.footer--nav__list a:hover{
+    color: var(--bright-blue);
+}
+/**************** responsive ***************** */
+/* 768px */
+@media screen and (max-width:768px){
+    .navbar {
+        width: 100%;
+        margin: auto;
+        padding: 56px 50px 0 50px;
+    }
+    .hero{
+        padding:250px 20px 0 20px;
+    }
+    .search--field{
+        float: none;
+        margin-bottom: 40px;
+    }
+    .card{
+        margin:40px 0 0 0;
+    }
+    .container{
+        position: relative;
+        top:0;
+        padding:93px 20px 112px 20px;
+    }
+    .footer--nav__list{
+        float: none;
+    }
+    .foot--logo{
+        float: none;
+    }
+    .footer--nav__list ul{
+        margin: 50px 0 0 0;
+        line-height: 24px;
+    }
+    .tourist--spot__one div{
+        height: 354px;
+    }
+    .tourist--spot__two div{
+        height: 354px;
+    }
+  
+}
+@media screen and (min-width:768px){
+    .search--field{
+        float: left;
+    }
+}
+ 
+/* 1024px */
+@media screen and (max-width:1024px){
+    .menu{
+        display: block;
+    }
+    .navbar--nav{
+        display: none;
+    }
+    .hero h1{
+        font-size: 40px;
+    }
+    .hero{
+        padding:250px 30px 0 30px;
+    }
+    .search--field{
+        margin: 0 62px 20px 0;
+    }
+    .card{
+        width:100%;
+        text-align: center;
+        margin:80px 0 0 0;
+    }
+    .container{
+        position: relative;
+        top:0;
+    }
+    .places{
+        position: relative;
+        top: 0;
+        margin-top: 131px;
+        padding: 0 20px;
+    }
+     .meditation{
+        position: relative;
+        top: 0;
+        margin-top: 131px;
+        padding: 0 20px;
+    }
+    .container h3{
+        text-align: center;
+    }
+    .places  h3{
+        display:block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .places h3::after{
+        transform: translateX(50%);
+        width: 50%;
+    }
+    .places h4{
+        text-align: center;
+    }
+    .destinations h4,
+    .destinations p,
+    .link--secondary{
+        text-align: center;
+    }
+    .view--more{
+        display:block;
+        text-align: center;
+        float: none;
+    }
+    .indication-line{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .view--details,
+    .neighborhood{
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    
+    
+    .details{
+        padding: 46px 20px 0 20px;
+    }
+    .arashiyam--details{
+        padding: 46px 20px 15px 20px;
+    }
+
+    .video{
+        padding: 0 20px;
+    }
+    .popular--city h3{
+        text-align: center;
+    }
+    .popular--city h3::after{
+        transform: translateX(50%);
+        width: 50%;
+    }
+
+    .b-1{
+        width:100%;
+        margin:10 0 0 0;
+    }
+    .place--item{
+        width:100%;
+        margin:54px 0 0 0;
+        text-align: center;
+    }
+    .popular--city{
+        padding: 80px 20px 0 20px;
+    }
+    .place--item p{
+        text-align: center;
+    }
+    .place--item{
+        text-align: center;
+    }
+    .footer--container{
+        padding: 118px 50px;
+    }
+     .footer--nav__list ul{
+        display: inline-block;
+        margin: 80px 80px 0 0;
+        line-height: 24px;
+    }
+    .view--details h4{
+        font-size: 28px;
+    }
+    .neighborhood img{
+        margin-bottom: 20px;
+    }
+    .places a{
+    float:none;
+    }
+    .neighborhood h4{
+        font-size: 28px;
+    }
+    .tourist--spot__one div{
+        height: 450px;
+        margin: 0 0 10px 0;
+    }
+    .tourist--spot__two div{
+        height: 550px;
+        margin: 0 0 10px 0;
+    }
+  
+}
+
+@media screen and (min-width:1024px){
+    .menu{
+        display:none;
+    }
+    .navbar--nav{
+        display: block;
+    }
+    .hero{
+        padding-top: 263px;
+    }
+    .search--field{
+        float: left;
+        margin: 0 62px 0 0;
+    }
+    .card{
+        text-align:left;
+    }
+    .container img{
+        text-align:left;
+    }
+    .card{
+        width: calc((100% - 148px) / 3); 
+        margin: 120px 74px 0 0;
+    }
+    .places h3{
+        display: inline-block;
+    }
+    .places h3::after{
+        width: 52%;
+    }
+    .places h3::after {
+        transform:none;
+    }
+    .indication-line{
+        width: 253px;
+        display: block;
+        margin: 0;
+    }
+    .places,
+    .meditation{
+        padding: 0;
+    }
+   
+    
+    
+    .place--item{
+        text-align: left;
+    }
+    .place--item p{
+        text-align: left;
+    }
+    .destinations h4,
+    .destinations p,
+    .link--secondary{
+        text-align: left
+    }
+    .view--details{
+        width:calc((100% - 10px) / 2);
+        height: 354px;
+        margin: 0 10px 0 0;
+    }
+    .neighborhood{
+        width:calc((100% - 10px) / 2);
+        height: 354px;
+        margin: 0 10px 0 0;
+    }
+    .details{
+        padding: 26px 43px 49px 73px;
+    }
+    .view--details h4{
+        font-size: 30px;
+    }
+    .arashiyam--details {
+        padding: 26px 31px 13px 47px;
+    }
+    .video{
+        padding: 0;
+    }
+    .popular--city h3{
+        text-align: left;
+    }
+    .b-1{
+        width: calc((100% - 116px) / 3);
+        margin:0 54px 0 0;
+    }
+    .city--container{
+        margin-top: 54px;
+    }
+    .place--item{
+        width:calc((100% - 116px) / 3);
+        margin: 0 58px 54px 0;
+    }
+    .popular--city{
+        padding: 131px 0 0 0;
+    }
+    .popular--city h3 {
+        text-align: left;
+    }
+    .popular--city h3::after{
+        transform:none;
+        width: 20%;
+    }
+    .places h3::after{
+        width: 52%;
+    }
+    .footer--container{
+        padding: 118px 80px 180px 80px;
+    }
+    .footer--nav__list ul{
+        display: inline-block;
+        margin:0 0 0 130px;
+        line-height: 24px;
+    }
+    .footer--nav__list {
+        float: right;
+    }
+    .foot--logo{
+       display: inline-block;
+    }  
+    .text--lg{
+        font-size: 35px;
+    }
+    .text--md{
+        font-size: 18px;
+    }
+    .text--sm{
+        font-size: 16px;
+    } 
+    .stick{
+        font-size: 50px;
+    }
+    .places a{
+    float: right;
+    }
+    .neighborhood h4{
+        font-size: 30px;
+    }
+    .tourist--spot__one div{
+        width:calc((100% - 10px) / 2);
+        height: 354px;
+        margin: 36px 10px 0 0;
+    }
+    
+    .tourist--spot__two div{
+        width:calc((100% - 20px) / 3);
+        height: 354px;
+        margin: 10px 10px 0 0;
+    }
+}
+ 
+
+/******************* helper css ***************** */
+/* 1024px */
+@media screen and (max-width:1024px) {
+ 
+    .cta-primary{
+        padding: 12px 25px;
+    }
+    .cta-secondary{
+        padding:10px 15px;
+    }    
+    h3{
+        font-size: 30px;
+    }
+    .text--md{
+        font-size: 16px;
+    }
+    .text--sm{
+        font-size: 14px;
+    }
+    h1{
+        font-size: 45px;
+    }
+    .stick{
+        font-size: 42px;
+    }
+  
+} 
+
+@media screen and (max-width:768px) {
+    .desktop--view{
+        display: none;
+    }
+    .cta-primary{
+        padding: 10px 18px;
+    }
+    .cta-secondary{
+        padding:8px 12px;
+    }    
+    .text--lg{
+        font-size: 26px;
+    }
+    .text--md{
+        font-size: 14px;
+    }
+    .text--sm{
+        font-size: 12px;
+    }
+    h1{
+        font-size: 38px;
+    }
+    .view--details h4{
+        font-size: 24px;
+    }
+    .stick{
+        font-size: 38px;
+    }
+  
+}
